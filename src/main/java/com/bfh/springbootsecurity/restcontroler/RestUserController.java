@@ -3,6 +3,7 @@ package com.bfh.springbootsecurity.restcontroler;
 import com.bfh.springbootsecurity.config.Constants;
 import com.bfh.springbootsecurity.domain.User;
 import com.bfh.springbootsecurity.domain.UserAdminService;
+import com.bfh.springbootsecurity.jwt.JWTTokenHelper;
 import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -65,6 +67,23 @@ public class RestUserController {
         } else {
             return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
         }
+    }
+
+    @ApiOperation(value = "users/login", notes = "Returns a jwt token on success")
+    @GetMapping(value = "/login")
+    @PreAuthorize("isAuthenticated()")
+    //exercise 4 -> login service, anyone can execute, when authenticated
+    public ResponseEntity login(Authentication authentication){
+        logger.debug("Rest-API call: login");
+        ResponseEntity responseEntity = new ResponseEntity(HttpStatus.FORBIDDEN);
+        if (authentication != null) {
+            if (authentication.getPrincipal() instanceof UserDetails) {
+                //user is authenticated -> return a jwt token for authenticated user
+                String jwtToken = JWTTokenHelper.generateJWTToken((UserDetails) authentication.getPrincipal());
+                responseEntity = new ResponseEntity(jwtToken, HttpStatus.OK);
+            }
+        }
+        return responseEntity;
     }
 
 }

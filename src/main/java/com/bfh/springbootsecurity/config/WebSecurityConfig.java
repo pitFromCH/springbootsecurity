@@ -1,5 +1,6 @@
 package com.bfh.springbootsecurity.config;
 
+import com.bfh.springbootsecurity.jwt.JWTAuthenticationFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -63,10 +64,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                     .antMatchers(HttpMethod.PUT, "/webcams/**").hasAnyRole(Constants.USER + "," + Constants.SUPERUSER)
                     //exercise 3 -> delete webcams only by SUPERUSER
                     .antMatchers(HttpMethod.DELETE, "/webcams/**").hasRole(Constants.SUPERUSER)
+                    //exercise 4  -> every authenticated user is allowed
+                    .antMatchers( HttpMethod.GET, "/users/login/**").authenticated()
                     //exercise 3 -> User administration ony by ADMINISTRATOR
                     .antMatchers( "/users/**").hasRole(Constants.ADMINISTRATOR)
                     .anyRequest().authenticated()
                 .and()
+                    //exercise 4 -> add jwt autorization filter in chain
+                    .addFilter(new JWTAuthenticationFilter(authenticationManager()))
                     //exercise 2 -> HTTP BASIC authentication
                     .httpBasic()
                         .realmName("SecurityRealm")
