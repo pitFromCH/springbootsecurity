@@ -18,6 +18,8 @@ import javax.sql.DataSource;
 //exercise 2 -> Define web security config (enable DEBUG, test only)
 @Configuration
 @EnableWebSecurity(debug = true)
+//exercise 3 -> Enable method security
+@EnableGlobalMethodSecurity(prePostEnabled = true, securedEnabled = true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     //exercise 2 -> jdbc authentication use existing datasource (h2)
@@ -51,6 +53,18 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 //exercise 2 -> all resources of the application
                 .antMatcher("/**").authorizeRequests()
+                    //exercise 3 ->  read is permitted for all (no authentication)
+                    //.antMatchers(HttpMethod.GET, "/webcams/**").permitAll()
+                    //exercise 3 -> Addon exercise: only authenticated user are permitted to read vip webcams
+                    .antMatchers(HttpMethod.GET, "/webcams/**").access("isAnonymous() or isAuthenticated()")
+                    //exercise 3 -> create webcams only by USER or SUPERUSER
+                    .antMatchers(HttpMethod.POST, "/webcams/**").hasAnyRole(Constants.USER + "," + Constants.SUPERUSER)
+                    //exercise 3 -> update webcams only by USER or SUPERUSER
+                    .antMatchers(HttpMethod.PUT, "/webcams/**").hasAnyRole(Constants.USER + "," + Constants.SUPERUSER)
+                    //exercise 3 -> delete webcams only by SUPERUSER
+                    .antMatchers(HttpMethod.DELETE, "/webcams/**").hasRole(Constants.SUPERUSER)
+                    //exercise 3 -> User administration ony by ADMINISTRATOR
+                    .antMatchers( "/users/**").hasRole(Constants.ADMINISTRATOR)
                     .anyRequest().authenticated()
                 .and()
                     //exercise 2 -> HTTP BASIC authentication

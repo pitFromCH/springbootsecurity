@@ -1,5 +1,6 @@
 package com.bfh.springbootsecurity.restcontroler;
 
+import com.bfh.springbootsecurity.config.Constants;
 import com.bfh.springbootsecurity.domain.User;
 import com.bfh.springbootsecurity.domain.UserAdminService;
 import io.swagger.annotations.ApiOperation;
@@ -8,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -18,6 +20,8 @@ import java.util.List;
 
 @RequestMapping(value = "/users")
 @RestController
+//exercise 3 -> All services of this REST controller must only be executed by an ADMINISTRATOR
+@Secured(Constants.ADMINISTRATOR_AUTHORITY)
 public class RestUserController {
 
     private static Logger logger = LoggerFactory.getLogger(RestUserController.class);
