@@ -1,0 +1,34 @@
+#Spring configuration
+spring:
+#Datasource
+  datasource:
+    name: testdb
+    url: jdbc:h2:mem:testdb
+    platform: h2
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+    initialization-mode: always
+  h2:
+    console:
+      enabled: true
+      path: /console
+
+  #exercise 1 -> define one custom user with a custom pw and a custom role(s)
+  security:
+    user:
+      name: MeinUser
+      password: MeinPasswort
+      roles: SUPERUSER, USER
+
+
+# Logging
+logging:
+  level:
+    root: ERROR
+    org.springframework: INFO
+    org.springframework.web: DEBUG
+    org.springframework.security: DEBUG
+    com.bfh.springbootsecurity: DEBUG
+
+

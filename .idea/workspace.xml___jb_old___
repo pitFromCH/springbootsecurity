@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="93a1f2ee-d78a-454e-85a3-659d98b525b3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bfh/springbootsecurity/config/WebSecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bfh/springbootsecurity/jwt/JWTAuthenticationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bfh/springbootsecurity/jwt/JWTTokenHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bfh/springbootsecurity/config/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bfh/springbootsecurity/config/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bfh/springbootsecurity/config/SwaggerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bfh/springbootsecurity/config/SwaggerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bfh/springbootsecurity/domain/UserAdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bfh/springbootsecurity/domain/UserAdminService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bfh/springbootsecurity/domain/UserAuthority.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bfh/springbootsecurity/domain/UserAuthority.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bfh/springbootsecurity/repository/WebCamRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bfh/springbootsecurity/repository/WebCamRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bfh/springbootsecurity/restcontroler/RestUserAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bfh/springbootsecurity/restcontroler/RestUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bfh/springbootsecurity/restcontroler/RestWebCamController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bfh/springbootsecurity/restcontroler/RestWebCamController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1XJUnCMbes4HePOKzwEqCWtwt1R" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/bfh/springbootsecurity" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.bfh.springbootsecurity.config" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Projects\Spring_security_kurs_uebungen_2020\springbootsecurity\src\main\java\com\bfh\springbootsecurity" />
+      <recent name="D:\Projects\Spring_security_kurs_uebungen_2020\src\main\resources" />
+      <recent name="D:\Projects\Spring_security_kurs_uebungen_2020\src\main\java\com\bfh\springbootsecurity" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpringbootsecurityApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="springbootsecurity" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.bfh.springbootsecurity.SpringbootsecurityApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file enabled="true" id="idea.log" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="93a1f2ee-d78a-454e-85a3-659d98b525b3" name="Default Changelist" comment="" />
+      <created>1580763855653</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1580763855653</updated>
+      <workItem from="1580763858806" duration="2182000" />
+      <workItem from="1580841444928" duration="8000" />
+      <workItem from="1580841547285" duration="1271000" />
+      <workItem from="1581193712871" duration="651000" />
+      <workItem from="1581242487181" duration="7980000" />
+      <workItem from="1581537170757" duration="2165000" />
+      <workItem from="1581540869981" duration="1307000" />
+      <workItem from="1581616492315" duration="6421000" />
+      <workItem from="1581711447264" duration="2895000" />
+      <workItem from="1581754042511" duration="20495000" />
+    </task>
+    <task id="LOCAL-00001" summary="Initial push">
+      <created>1581247058210</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1581247058211</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Initial push">
+      <created>1581247141678</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1581247141678</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Initial push">
+      <created>1581258783270</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1581258783270</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Initial push">
+      <created>1581258849491</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1581258849491</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Initial push">
+      <created>1581279377633</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1581279377633</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial push" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial push" />
+  </component>
+</project>
