@@ -14,14 +14,6 @@ spring:
       enabled: true
       path: /console
 
-  #exercise 1 -> define one custom user with a custom pw and a custom role(s)
-  security:
-    user:
-      name: MeinUser
-      password: MeinPasswort
-      roles: SUPERUSER, USER
-
-
 # Logging
 logging:
   level:
