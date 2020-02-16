@@ -8,7 +8,12 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Collection;
 import java.util.List;
 
 @RequestMapping(value = "/users")
@@ -25,8 +30,18 @@ public class RestUserController {
 
     @ApiOperation(value = "Get all users", notes = "Returns a lists with all registered users")
     @GetMapping
-    public List<User> getUsers() {
+    public List<User> getUsers(Authentication authentication) {
         logger.debug("Rest-API-Call: getUsers()");
+        //exercise 2 -> Log an authenticated user if exist
+        //Instead of injection of the authentication object in the parameters, the object can be requested from the SecurityContextHolder
+        //SecurityContextHolder.getContext().getAuthentication();
+        if (authentication != null) {
+            if (authentication.getPrincipal() instanceof UserDetails) {
+                UserDetails user = (UserDetails) authentication.getPrincipal();
+                Collection<SimpleGrantedAuthority> authorities = (Collection<SimpleGrantedAuthority>) authentication.getAuthorities();
+                logger.info("Authenticated User :  [" + authentication.getName() + "], Roles [" + authorities.toString() + "], Password [" + authentication.getCredentials() + "]");
+            }
+        }
         List<User> list = userAdminService.findAll();
         return userAdminService.findAll();
     }

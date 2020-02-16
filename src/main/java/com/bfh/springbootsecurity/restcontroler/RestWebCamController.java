@@ -3,12 +3,12 @@ package com.bfh.springbootsecurity.restcontroler;
 import com.bfh.springbootsecurity.domain.WebCam;
 import com.bfh.springbootsecurity.domain.WebCamService;
 import io.swagger.annotations.ApiOperation;
-import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 import javax.validation.constraints.NotNull;
 import java.util.List;
@@ -34,8 +34,10 @@ public class RestWebCamController {
 
     @ApiOperation(value = "Register a new webcam", notes = "Returns the registered webcam")
     @PostMapping
-    public WebCam createWebCam(@RequestBody WebCam webCam) {
+    public WebCam createWebCam(@RequestBody WebCam webCam, Authentication authentication) {
         logger.debug("Rest-API-Call: createWebCam()");
+        //exercise 2 -> insert authenticated user in field owner
+        webCam.setOwner(authentication.getName());
         return  camService.createWebCam(webCam);
     }
 
@@ -45,6 +47,8 @@ public class RestWebCamController {
         logger.debug("Rest-API-Call: updateWebCam()");
         WebCam cam = camService.findWebCamByIdAndOwner(id, webCam.getOwner());
         if (cam != null) {
+            //exercise 2 -> insert authenticated user in field owner
+            webCam.setOwner(authentication.getName());
             cam.updateWebCam(webCam);
             camService.updateWebCam(cam);
             return new ResponseEntity(cam, HttpStatus.OK);
