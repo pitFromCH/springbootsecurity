@@ -31,10 +31,10 @@ logging:
     com.bfh.springbootsecurity: DEBUG
 
 #exercise 5 -> define tls
-  #server:
-  #port: 8443
-    #ssl:
-    #key-store: src/main/resources/keystore.jks
-    #key-store-password: changeit
-    #keyStoreType: JKS
-    #keyAlias: tomcat
+server:
+  port: 8443
+  ssl:
+    key-store: src/main/resources/keystore.jks
+    key-store-password: changeit
+    keyStoreType: JKS
+    keyAlias: tomcat
